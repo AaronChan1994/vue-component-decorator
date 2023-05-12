@@ -23,7 +23,10 @@ class Component {
 
 @component()
 class PropComponent {
-
+  /**
+   * declare props
+   * @link https://cn.vuejs.org/api/options-state.html#props
+   */
   @prop({
     type: Number, default: 0, required: true,
     validator: (value) => {
@@ -36,11 +39,6 @@ class PropComponent {
     return this.foo >= 0;
   }
 }
-
-/**
- * declare the prop
- * @link https://cn.vuejs.org/api/options-state.html#props
- */
 describe('prop.ts', () => {
   it('should be received props on mount', () => {
     const ClassComponent: any = Component;

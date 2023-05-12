@@ -24,6 +24,10 @@ class WatchComponent {
   public oldFoo?: any;
   public currFoo?: any;
 
+  /**
+   * declare watch
+   * @link https://cn.vuejs.org/api/options-state.html#watch
+   */
   @watch('foo', { immediate: true, deep: true })
   public onFooChange(val: string, old: string) {
     this.currFoo = val;
@@ -31,10 +35,6 @@ class WatchComponent {
   }
 }
 
-/**
- * declare the watch
- * @link https://cn.vuejs.org/api/options-state.html#watch
- */
 describe('watch.ts', () => {
   it('should trigger watch callback', () => {
     const ClassComponent: any = Component;

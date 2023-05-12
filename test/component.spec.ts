@@ -5,16 +5,32 @@ import { component } from '../src';
 
 @component()
 class Component {
+  /**
+   * computed getter
+   * @link https://cn.vuejs.org/api/options-state.html#computed
+   */
   public get computedFoo() {
     return this.foo;
   }
 
+  /**
+   * computed setter
+   * @link https://cn.vuejs.org/api/options-state.html#computed
+   */
   public set computedFoo(val) {
     this.foo = val;
   }
 
+  /**
+   * member of data
+   * @link https://cn.vuejs.org/api/options-state.html#data
+   */
   public foo = 'foo';
 
+  /**
+   * member of data
+   * @link https://cn.vuejs.org/api/options-state.html#methods
+   */
   public bar() {
     return this.foo + 'bar';
   }
@@ -27,12 +43,12 @@ class EmitsComponent {
 @component({ name: 'custom-component' })
 class NamedComponent {
 }
+
 /**
  * implements a ClassComponent
  * @see {ClassComponent} in @vue/runtime-core/dist/runtime-core.d.ts
  */
 describe('component.ts', () => {
-
   it('should implements ClassComponent', () => {
     const ClassComponent: any = Component;
     expect(typeof ClassComponent.__vccOpts).to.equal('object');
