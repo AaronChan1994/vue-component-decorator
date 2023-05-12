@@ -12,7 +12,10 @@
   "license" : "MIT",
   "main" : "index.js",
   "scripts" : {
-    "test" : "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register test/index.ts",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "./node_modules/.bin/tsc",
+    "build:esm": "./node_modules/.bin/tsc -outDir dist/esm -module ES6"
   },
   "peerDependencies" : {
     "vue" : "^3.0.0"
