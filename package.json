@@ -9,6 +9,11 @@
     "typescript"
   ],
   "author" : "AaronChan1994",
+  "homepage": "https://github.com/AaronChan1994/vue-component-decorator",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AaronChan1994/vue-component-decorator.git"
+  },
   "license" : "MIT",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
