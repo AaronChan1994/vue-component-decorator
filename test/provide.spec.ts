@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component, provide } from '../src';
 
+
 @component()
 class Component {
   /**
@@ -16,7 +17,7 @@ class Component {
 @component()
 class ProvideComponent {
   /**
-   * declare provide with other name
+   * declare provide with options
    * @link https://cn.vuejs.org/guide/components/provide-inject.html#provide
    */
   @provide('foo', 'provideFoo')
