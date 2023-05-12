@@ -1,7 +1,7 @@
 require('./jsdom.init');
 import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
-import { component, vmodel } from '../src';
+import { component, model } from '../src';
 
 @component()
 class Component {
@@ -9,7 +9,7 @@ class Component {
    * declare vmodel = prop + auto $emit on set
    * @link https://cn.vuejs.org/guide/components/v-model.html
    */
-  @vmodel()
+  @model()
   public declare foo: string;
 
   public bar() {

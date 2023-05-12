@@ -4,5 +4,5 @@ require('./mixins.spec');
 require('./prop.spec');
 require('./provide.spec');
 require('./ref.spec');
-require('./vmodel.spec');
+require('./model.spec');
 require('./watch.spec');

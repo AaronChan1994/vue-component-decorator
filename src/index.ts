@@ -4,7 +4,7 @@ import { InjectOptions } from './inject';
 import { PropOptions } from './prop';
 import { ProvideOptions } from './provide';
 import { RefOptions } from './ref';
-import { VModelOptions } from './vmodel';
+import { ModelOptions } from './model';
 import { WatchOptions } from './watch';
 
 export * from './prop';
@@ -12,13 +12,13 @@ export * from './component';
 export * from './watch';
 export * from './provide';
 export * from './inject';
-export * from './vmodel';
+export * from './model';
 export * from './ref';
 
 export class Vue {
   public static __vccOpts?: any;
   public static refs: Record<string, Partial<RefOptions>>;
-  public static vmodels: Record<string, Partial<VModelOptions>>;
+  public static models: Record<string, Partial<ModelOptions>>;
   public static props: Record<string, Partial<PropOptions>>;
   public static watch: Record<string, Partial<WatchOptions>>;
   public static provide: Record<string, Partial<ProvideOptions>>;

@@ -41,7 +41,7 @@ export function component(options: Partial<ComponentOptions> = {}): ClassDecorat
       }
       const data = function(this: Vue) {
         const component = new constructor();
-        foreach(constructor.vmodels, (options, key) => {
+        foreach(constructor.models, (options, key) => {
           Object.defineProperty(this, key, {
             get: () => {
               return this.$attrs[key] ?? this.$attrs[kebabCase(key)] ?? (isFunction(options.default) ? options.default() : options.default);
