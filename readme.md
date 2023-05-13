@@ -11,7 +11,10 @@ Do the same work like [vue-class-component](https://github.com/vuejs/vue-class-c
 This readme refers to [vue-facing-decorator](https://github.com/facing-dev/vue-facing-decorator) and [vue-class-component](https://github.com/vuejs/vue-class-component), thank you.
 
 -----------------
-
+# Installation
+``
+npm i @aaron1994/vue-component-decorator
+``
 # Documentation
 
 The documentation is not ready yet. But you can see `test` file.
