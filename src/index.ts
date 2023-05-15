@@ -14,6 +14,7 @@ export * from './provide';
 export * from './inject';
 export * from './model';
 export * from './ref';
+export * from './utils';
 
 export class Vue {
   public static __vccOpts?: any;
