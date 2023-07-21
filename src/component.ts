@@ -8,8 +8,17 @@ export interface ComponentOptions {
   emits: string[];
 }
 
-export function component(options: Partial<ComponentOptions> = {}): ClassDecorator<any> {
+function _component(arg: Partial<ComponentOptions> | typeof Vue, cb: (constructor: typeof Vue, options: Partial<ComponentOptions>) => any) {
+  if (typeof arg === 'function') {
+    return cb(arg, {});
+  }
   return function(constructor: typeof Vue) {
+    return cb(constructor, arg);
+  };
+}
+
+export function component(arg: Partial<ComponentOptions> | typeof Vue): ClassDecorator<any> {
+  return _component(arg, function(constructor: typeof Vue, options) {
     if (!constructor.__vccOpts) {
       const name = options.name ?? constructor.name;
       const components = options.components;
@@ -78,5 +87,5 @@ export function component(options: Partial<ComponentOptions> = {}): ClassDecorat
       };
     }
     return constructor;
-  };
+  });
 }
