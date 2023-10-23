@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component, prop } from '../src';
 
-@component()
+@component
 class Component {
   public get computedFoo() {
     return this.foo;
@@ -21,7 +21,7 @@ class Component {
   }
 }
 
-@component()
+@component
 class PropComponent {
   /**
    * declare props

@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component, model } from '../src';
 
-@component()
+@component
 class Component {
   /**
    * declare vmodel = prop + auto $emit on set

@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component, watch } from '../src';
 
-@component()
+@component
 class Component {
   public foo = 'foo';
   public oldFoo = '';
@@ -16,7 +16,7 @@ class Component {
   }
 }
 
-@component()
+@component
 class WatchComponent {
   public foo = {
     bar: 'foo',

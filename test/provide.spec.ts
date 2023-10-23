@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { component, provide } from '../src';
 
 
-@component()
+@component
 class Component {
   /**
    * declare provide
@@ -14,7 +14,7 @@ class Component {
   public declare foo: string;
 }
 
-@component()
+@component
 class ProvideComponent {
   /**
    * declare provide with options

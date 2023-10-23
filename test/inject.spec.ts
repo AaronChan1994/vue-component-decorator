@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component, inject } from '../src';
 
-@component()
+@component
 class Component {
   /**
    * declare inject
@@ -13,7 +13,7 @@ class Component {
   public declare foo: string;
 }
 
-@component()
+@component
 class InjectComponent {
   /**
    * declare inject with options

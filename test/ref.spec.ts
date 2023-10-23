@@ -2,7 +2,7 @@ require('./jsdom.init');
 import { component, ref } from '../src';
 
 
-@component()
+@component
 class Component {
   /**
    * declare foo = this.$refs.foo
@@ -12,7 +12,7 @@ class Component {
   public declare foo: string;
 }
 
-@component()
+@component
 class RefComponent {
   /**
    * declare foo = this.$refs.fooRef
