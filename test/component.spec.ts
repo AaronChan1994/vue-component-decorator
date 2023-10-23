@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
 import { component } from '../src';
 
-@component()
+@component
 class Component {
   /**
    * computed getter
