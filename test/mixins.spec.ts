@@ -1,8 +1,7 @@
 require('./jsdom.init');
 import {mount} from '@vue/test-utils';
 import {expect} from 'chai';
-import {component} from '../src';
-import {mixins} from '../src/utils';
+import {component, mixins} from '../src';
 
 class A {
     public a: string;
