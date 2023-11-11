@@ -44,6 +44,23 @@ class EmitsComponent {
 class NamedComponent {
 }
 
+function a() {
+  return 'a';
+}
+
+function b() {
+  return 'b';
+}
+
+@component({ methods: { a, b } })
+class MethodComponent {
+  declare a: () => string;
+
+  public c() {
+    return this.a() + 'c';
+  }
+}
+
 /**
  * implements a ClassComponent
  * @see {ClassComponent} in @vue/runtime-core/dist/runtime-core.d.ts
@@ -92,5 +109,12 @@ describe('component.ts', () => {
     expect(vm.computedFoo).to.equal(vm.foo).to.equal('foo');
     expect(vm.computedFoo = 'bar').to.equal(vm.foo).to.equal('bar');
     expect(vm.bar()).to.equal(vm.foo + 'bar').to.equal('barbar');
+  });
+  it('should has methods', () => {
+    const ClassComponent: any = MethodComponent;
+    const vm = mount<any>(ClassComponent).vm;
+    expect(vm.a()).to.equal('a');
+    expect(vm.b()).to.equal('b');
+    expect(vm.c()).to.equal('ac');
   });
 });
