@@ -1,6 +1,6 @@
 {
   "name": "@aaron1994/vue-component-decorator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue3 class-style component decorator.",
   "keywords": [
     "vue3",
