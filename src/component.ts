@@ -6,7 +6,6 @@ export interface ComponentOptions {
   name: string;
   components: Record<string, any>;
   emits: string[];
-  methods: Record<string, Function>;
 }
 
 function _component(arg: Partial<ComponentOptions> | typeof Vue, cb: (constructor: typeof Vue, options: Partial<ComponentOptions>) => any) {
@@ -24,7 +23,7 @@ export function component(arg: Partial<ComponentOptions> | Class) {
       const name = options.name ?? constructor.name;
       const components = options.components;
       const emits = options.emits;
-      const methods = options.methods ?? {};
+      const methods = {};
       const computed: Record<string, any> = {};
       const props = constructor.props;
       const watch = constructor.watch;

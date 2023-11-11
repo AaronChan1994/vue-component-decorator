@@ -1,10 +1,11 @@
-import 'vue-router';
 import { ComponentCustomProperties, ComponentPublicInstance } from 'vue';
+import 'vue-router';
 import { InjectOptions } from './inject';
+import { ModelOptions } from './model';
 import { PropOptions } from './prop';
 import { ProvideOptions } from './provide';
 import { RefOptions } from './ref';
-import { ModelOptions } from './model';
+import { Class } from './utils';
 import { WatchOptions } from './watch';
 
 export * from './prop';
@@ -17,6 +18,15 @@ export * from './ref';
 export * from './utils';
 
 export class Vue {
+  public static with<Methods extends Record<string, Function>>(methods: Methods) {
+    const C = class {
+    };
+    for (const [key, value] of Object.entries(methods)) {
+      (C.prototype as any)[key] = value;
+    }
+    return C as Class<Methods>;
+  }
+
   public static __vccOpts?: any;
   public static refs: Record<string, Partial<RefOptions>>;
   public static models: Record<string, Partial<ModelOptions>>;

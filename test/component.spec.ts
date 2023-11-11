@@ -1,7 +1,7 @@
 require('./jsdom.init');
 import { mount } from '@vue/test-utils';
 import { expect } from 'chai';
-import { component } from '../src';
+import { component, Vue } from '../src';
 
 @component
 class Component {
@@ -52,10 +52,8 @@ function b() {
   return 'b';
 }
 
-@component({ methods: { a, b } })
-class MethodComponent {
-  declare a: () => string;
-
+@component
+class MethodComponent extends Vue.with({ a, b }) {
   public c() {
     return this.a() + 'c';
   }
