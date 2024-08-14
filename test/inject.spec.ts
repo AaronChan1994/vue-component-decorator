@@ -9,7 +9,7 @@ class Component {
    * declare inject
    * @link https://cn.vuejs.org/guide/components/provide-inject.html#inject
    */
-  @inject()
+  @inject
   public declare foo: string;
 }
 

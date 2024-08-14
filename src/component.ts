@@ -1,5 +1,5 @@
 import kebabCase from 'lodash.kebabcase';
-import { Class, Vue } from './index';
+import { Class, classDecorator, Vue } from './index';
 import { foreach, isFunction } from './utils';
 
 export interface ComponentOptions {
@@ -9,17 +9,8 @@ export interface ComponentOptions {
   methods: Record<string, Function>;
 }
 
-function _component(arg: Partial<ComponentOptions> | typeof Vue, cb: (constructor: typeof Vue, options: Partial<ComponentOptions>) => any) {
-  if (typeof arg === 'function') {
-    return cb(arg, {});
-  }
-  return function(constructor: typeof Vue) {
-    return cb(constructor, arg);
-  };
-}
-
 export function component(arg: Partial<ComponentOptions> | Class) {
-  return _component(arg as any, function(constructor: typeof Vue, options) {
+  return classDecorator<ComponentOptions>(arg as any, function(options, constructor: typeof Vue) {
     if (!constructor.__vccOpts) {
       const name = options.name ?? constructor.name;
       const components = options.components;

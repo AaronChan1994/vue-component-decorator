@@ -8,7 +8,7 @@ class Component {
    * declare foo = this.$refs.foo
    * @link https://cn.vuejs.org/api/built-in-special-attributes.html#ref
    */
-  @ref()
+  @ref
   public declare foo: string;
 }
 

@@ -17,6 +17,24 @@ export * from './model';
 export * from './ref';
 export * from './utils';
 
+export function classDecorator<Options>(arg: Partial<Options> | typeof Vue, cb: (options: Partial<Options>, constructor: typeof Vue) => any) {
+  if (typeof arg === 'function') {
+    return cb({}, arg);
+  }
+  return function(constructor: typeof Vue) {
+    return cb(arg, constructor);
+  };
+}
+
+export function propertyDecorator<Options, T = any, P extends string = string>(arg: Partial<Options> | T, cb: (options: Partial<Options>, target: T, property: P) => any, property?: P) {
+  if (typeof property === 'undefined') {
+    return function(target: T, property: P) {
+      return cb(arg as Partial<Options>, target, property);
+    };
+  }
+  return cb({}, arg as T, property);
+}
+
 export class Vue {
   public static with<Methods extends Record<string, Function>>(methods: Methods) {
     const C = class {

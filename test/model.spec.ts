@@ -9,7 +9,7 @@ class Component {
    * declare vmodel = prop + auto $emit on set
    * @link https://cn.vuejs.org/guide/components/v-model.html
    */
-  @model()
+  @model
   public declare foo: string;
 
   public bar() {

@@ -13,7 +13,7 @@ class Component {
     this.foo = val;
   }
 
-  @prop()
+  @prop
   public declare foo: string;
 
   public bar() {
